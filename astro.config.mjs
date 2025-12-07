@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
-  site: 'https://ferriskey.io',
+  site: 'https://ferriskey.rs',
   vite: {
     plugins: [tailwindcss()],
   },
