@@ -1,0 +1,197 @@
+---
+import { modules } from '../data/modules';
+
+const statusColors = {
+  stable: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
+  beta: 'bg-amber-500/10 text-amber-400 border-amber-500/20',
+  alpha: 'bg-orange-500/10 text-orange-400 border-orange-500/20',
+};
+
+const statusLabels = {
+  stable: 'Stable',
+  beta: 'Beta',
+  alpha: 'Alpha',
+};
+---
+
+<div class="w-full">
+  <!-- Filter Buttons -->
+  <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
+    <button
+      data-filter="all"
+      class="filter-btn active px-5 py-2.5 rounded-lg font-semibold transition-all duration-300 text-sm"
+    >
+        All modules
+    </button>
+    <button
+      data-filter="stable"
+      class="filter-btn px-5 py-2.5 rounded-lg font-semibold transition-all duration-300 text-sm"
+    >
+      Stable
+    </button>
+    <button
+      data-filter="beta"
+      class="filter-btn px-5 py-2.5 rounded-lg font-semibold transition-all duration-300 text-sm"
+    >
+      Beta
+    </button>
+    <button
+      data-filter="alpha"
+      class="filter-btn px-5 py-2.5 rounded-lg font-semibold transition-all duration-300 text-sm"
+    >
+      Alpha
+    </button>
+  </div>
+
+  <!-- Modules Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {modules.map((module, index) => (
+      <div
+        class="module-card group relative card-hover cursor-pointer"
+        data-status={module.status}
+        data-module-id={module.id}
+        style={`animation-delay: ${index * 0.1}s;`}
+      >
+        {/* Status Badge */}
+        <div class="absolute top-6 right-6 z-10">
+          <span class={`text-xs font-semibold px-3 py-1 rounded-full border backdrop-blur-sm ${statusColors[module.status]}`}>
+            {statusLabels[module.status]}
+          </span>
+        </div>
+
+        {/* Module Icon with Gradient */}
+        <div class={`w-16 h-16 rounded-xl flex items-center justify-center mb-4 bg-gradient-to-br ${module.color} shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+          <span class="text-4xl">{module.icon}</span>
+        </div>
+
+        {/* Module Name */}
+        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-ferris-400 transition-colors">
+          {module.name}
+        </h3>
+
+        {/* Description */}
+        <p class="text-slate-400 leading-relaxed mb-4 text-sm">
+          {module.description}
+        </p>
+
+        {/* Features List - Always visible */}
+        <div class="module-features">
+          <div class="pt-4 border-t border-slate-700/50">
+            <h4 class="text-sm font-semibold text-ferris-400 mb-3">
+                Key features :
+            </h4>
+            <ul class="space-y-2">
+              {module.features.map((feature) => (
+                <li class="flex items-start text-sm text-slate-400">
+                  <svg
+                    class="w-4 h-4 mr-2 mt-0.5 text-ferris-400 flex-shrink-0"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span>{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Hover Glow Effect */}
+        <div class={`absolute inset-0 rounded-xl bg-gradient-to-br ${module.color} opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none`} />
+      </div>
+    ))}
+  </div>
+
+  {/* Module Count */}
+  <div class="text-center mt-12">
+    <p id="module-count" class="text-slate-500">
+      {modules.length} modules
+    </p>
+  </div>
+</div>
+
+<style>
+  .filter-btn {
+    background: rgba(30, 41, 59, 0.5);
+    color: #cbd5e1;
+    border: 1px solid rgba(51, 65, 85, 0.5);
+  }
+
+  .filter-btn:hover {
+    background: rgba(51, 65, 85, 0.6);
+    border-color: rgba(71, 85, 105, 0.5);
+  }
+
+  .filter-btn.active {
+    background: linear-gradient(to right, #f97316, #ea580c);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
+  }
+
+  .module-card {
+    animation: fadeInUp 0.6s ease-out backwards;
+  }
+
+
+
+  .module-card.hidden {
+    display: none;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+<script>
+  // Filter functionality
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const moduleCards = document.querySelectorAll('.module-card');
+  const moduleCount = document.getElementById('module-count');
+
+  let currentFilter = 'all';
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const filter = button.getAttribute('data-filter');
+      currentFilter = filter;
+
+      // Update active button
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+
+      // Filter modules
+      let visibleCount = 0;
+      moduleCards.forEach(card => {
+        const status = card.getAttribute('data-status');
+        if (filter === 'all' || status === filter) {
+          card.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      // Update count
+      if (moduleCount) {
+        const filterText = filter !== 'all' ? ` en ${button.textContent}` : '';
+        moduleCount.textContent = `${visibleCount} module${visibleCount > 1 ? 's' : ''}${filterText}`;
+      }
+    });
+  });
+
+
+</script>

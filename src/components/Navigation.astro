@@ -1,0 +1,286 @@
+---
+// Modern Navigation inspired by Scaleway's clean design
+---
+
+<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="absolute inset-0 nav-background opacity-0 transition-opacity duration-300"></div>
+
+  <div class="container-custom relative">
+    <div class="flex items-center justify-between h-16 md:h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 group relative z-10">
+        <div class="relative">
+          <!-- Glow effect -->
+          <div class="absolute inset-0 rounded-xl bg-gradient-to-r from-ferris-500 to-ferris-600 opacity-0 group-hover:opacity-20 blur-xl transition-all duration-500"></div>
+
+          <!-- Logo container -->
+          <div class="relative w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-gradient-to-br from-ferris-500 to-ferris-600 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300">
+              <img src="/ferriskey.png" alt="FerrisKey Logo" class="w-6 h-6 md:w-9 md:h-9" />
+
+          </div>
+        </div>
+
+        <div class="flex flex-col">
+          <span class="text-xl md:text-2xl font-bold text-white">
+            FerrisKey
+          </span>
+          <span class="text-[10px] md:text-xs text-slate-400 -mt-1 font-medium">
+            Open-Source IAM
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center gap-1">
+        <a href="#features" class="nav-link">
+          Features
+        </a>
+        <a href="#modules" class="nav-link">
+          Modules
+        </a>
+        <a href="#sponsors" class="nav-link">
+          Sponsors
+        </a>
+        <a href="#team" class="nav-link">
+          Team
+        </a>
+        <a
+          href="https://docs.ferriskey.rs"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="nav-link group"
+        >
+          <span>Docs</span>
+          <svg class="w-3 h-3 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- CTA Buttons Desktop -->
+      <div class="hidden lg:flex items-center gap-3">
+        <a
+          href="https://github.com/ferriskey/ferriskey"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-700/50 bg-slate-800/50 text-slate-300 hover:bg-slate-800 hover:border-slate-600 hover:text-white transition-all duration-200 text-sm font-medium"
+        >
+          <svg class="w-4 h-4 transition-transform group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+          </svg>
+          <span>GitHub</span>
+        </a>
+
+        <a href="https://docs.ferriskey.rs/en/getting-started/introduction" target="_blank" class="group relative overflow-hidden flex items-center gap-2 px-5 py-2 rounded-lg bg-gradient-to-r from-ferris-500 to-ferris-600 text-white font-semibold text-sm shadow-md hover:shadow-lg transition-all duration-200 hover:scale-105">
+          <div class="absolute inset-0 bg-gradient-to-r from-ferris-400 to-ferris-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <span class="relative z-10">Get Started</span>
+          <svg class="relative z-10 w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-button"
+        class="lg:hidden relative w-10 h-10 rounded-lg border border-slate-700/50 hover:border-slate-600 transition-colors group"
+        aria-label="Toggle menu"
+      >
+        <div class="absolute inset-0 rounded-lg bg-slate-800/50 group-hover:bg-slate-800 transition-colors"></div>
+        <div class="relative flex flex-col items-center justify-center gap-1.5">
+          <span class="hamburger-line w-5 h-0.5 bg-slate-400 group-hover:bg-slate-200 transition-colors"></span>
+          <span class="hamburger-line w-5 h-0.5 bg-slate-400 group-hover:bg-slate-200 transition-colors"></span>
+          <span class="hamburger-line w-5 h-0.5 bg-slate-400 group-hover:bg-slate-200 transition-colors"></span>
+        </div>
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Progress Bar -->
+  <div id="scroll-progress" class="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-ferris-500 to-ferris-600 transition-all duration-150" style="width: 0%"></div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="lg:hidden absolute top-full left-0 right-0 opacity-0 invisible transition-all duration-300 transform -translate-y-2">
+    <div class="mx-4 mt-2 rounded-2xl border border-slate-800/50 overflow-hidden glass shadow-2xl">
+      <div class="p-4 space-y-1">
+        <a href="#features" class="mobile-nav-link">
+          <span>Features</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+        <a href="#modules" class="mobile-nav-link">
+          <span>Modules</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+        <a href="#team" class="mobile-nav-link">
+          <span>Team</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+        <a href="#sponsors" class="mobile-nav-link">
+          <span>Sponsors</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+        <a href="https://docs.ferriskey.io" target="_blank" rel="noopener noreferrer" class="mobile-nav-link">
+          <span>Documentation</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+          </svg>
+        </a>
+      </div>
+
+      <div class="p-4 pt-2 border-t border-slate-800/50 space-y-2">
+        <a
+          href="https://github.com/ferrislabs/ferriskey"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center justify-center gap-2 w-full px-5 py-3 rounded-lg border border-slate-700/50 bg-slate-800/50 text-slate-300 hover:bg-slate-800 hover:border-slate-600 hover:text-white transition-all duration-200"
+        >
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+          </svg>
+          <span>GitHub</span>
+        </a>
+        <a href="#get-started" class="flex items-center justify-center w-full px-5 py-3 rounded-lg bg-gradient-to-r from-ferris-500 to-ferris-600 hover:from-ferris-400 hover:to-ferris-500 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-200">
+          Get Started
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style>
+  /* Navigation background */
+  .nav-background {
+    background: rgba(2, 6, 23, 0.85);
+    backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+  }
+
+  /* Scrolled state */
+  #main-nav.scrolled .nav-background {
+    opacity: 1;
+  }
+
+  /* Navigation links */
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    color: #cbd5e1;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+  }
+
+  .nav-link:hover {
+    background: rgba(30, 41, 59, 0.5);
+    color: white;
+  }
+
+  /* Mobile navigation links */
+  .mobile-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    color: #cbd5e1;
+    transition: all 0.2s;
+  }
+
+  .mobile-nav-link:hover {
+    color: white;
+    background: rgba(30, 41, 59, 0.5);
+  }
+
+  /* Mobile menu open state */
+  #mobile-menu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Hamburger animation */
+  #mobile-menu-button.open .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  #mobile-menu-button.open .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  #mobile-menu-button.open .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+</style>
+
+<script>
+  // Scroll behavior
+  const nav = document.getElementById('main-nav');
+  const scrollProgress = document.getElementById('scroll-progress');
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+
+    // Add scrolled class
+    if (currentScroll > 20) {
+      nav?.classList.add('scrolled');
+    } else {
+      nav?.classList.remove('scrolled');
+    }
+
+    // Update progress bar
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = (currentScroll / windowHeight) * 100;
+    if (scrollProgress) {
+      scrollProgress.style.width = `${progress}%`;
+    }
+  });
+
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenuButton.classList.toggle('open');
+    mobileMenu?.classList.toggle('open');
+  });
+
+  // Close mobile menu when clicking on links
+  const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenuButton?.classList.remove('open');
+      mobileMenu?.classList.remove('open');
+    });
+  });
+
+  // Close on resize to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 1024) {
+      mobileMenuButton?.classList.remove('open');
+      mobileMenu?.classList.remove('open');
+    }
+  });
+
+  // Close when clicking outside
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (mobileMenu?.classList.contains('open') &&
+        !mobileMenu.contains(target) &&
+        !mobileMenuButton?.contains(target)) {
+      mobileMenuButton?.classList.remove('open');
+      mobileMenu?.classList.remove('open');
+    }
+  });
+</script>

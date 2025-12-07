@@ -1,0 +1,119 @@
+---
+// Modern Hero section inspired by Scaleway's clean design
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Background decoration -->
+  <div class="absolute inset-0 bg-grid opacity-30"></div>
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/50 to-slate-950"></div>
+
+  <!-- Floating shapes -->
+  <div class="absolute top-1/4 left-10 w-72 h-72 bg-ferris-500/5 rounded-full blur-3xl animate-pulse"></div>
+  <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+
+  <div class="container-custom relative z-10">
+    <div class="max-w-6xl mx-auto text-center section-py">
+
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 animate-fade-in-down">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+        </span>
+        <span class="text-sm font-medium text-slate-300">Open Source • Ready to use • v0.1</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="mb-6 animate-fade-in-up">
+        <span class="block text-white mb-2">Modern Identity & Access Management</span>
+        <span class="block text-gradient">Built with Rust</span>
+      </h1>
+
+      <!-- Subheadline -->
+      <p class="text-xl md:text-2xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style="animation-delay: 0.1s;">
+          FerrisKey is a powerful, secure, and scalable open-source IAM solution.
+          Cloud-ready and easy to deploy.
+      </p>
+
+      <!-- CTA Buttons - Improved design -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in-up" style="animation-delay: 0.2s;">
+        <a href="https://docs.ferriskey.rs/en/getting-started/introduction" target="_blank" class="group relative overflow-hidden bg-gradient-to-r from-ferris-500 to-ferris-600 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 inline-flex items-center gap-2">
+
+          <div class="absolute inset-0 bg-gradient-to-r from-ferris-400 to-ferris-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <span class="relative z-10 flex items-center gap-2">
+            <span>Get Started</span>
+            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </span>
+        </a>
+
+        <a href="https://github.com/ferriskey/ferriskey" target="_blank" rel="noopener noreferrer" class="group relative overflow-hidden bg-slate-800/80 border border-slate-700/50 text-slate-100 font-semibold px-8 py-4 rounded-xl hover:bg-slate-700/80 hover:border-slate-600/50 transition-all duration-300 inline-flex items-center gap-2 hover:shadow-lg">
+          <svg class="w-5 h-5 transition-transform group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
+            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+          </svg>
+          <span>View on GitHub</span>
+        </a>
+
+        <a href="https://docs.ferriskey.rs" target="_blank" rel="noopener noreferrer" class="group bg-transparent text-slate-300 font-semibold px-8 py-4 rounded-xl hover:bg-slate-800/50 hover:text-slate-100 transition-all duration-300 inline-flex items-center gap-2">
+          <svg class="w-5 h-5 transition-transform group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+          </svg>
+          <span>Documentation</span>
+        </a>
+      </div>
+
+      <!-- Key Features Badges - Clean Scaleway style -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-20 animate-fade-in" style="animation-delay: 0.3s;">
+
+        <!-- Rust -->
+        <div class="badge-primary">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M23.834 13.93l-1.053-1.945-2.031.637.052-.628-1.39-2.071-1.52 1.17-.626-.053-1.053-1.945-1.732 1.06-.521-.365-1.732 1.06.365.521-1.06 1.732 1.945 1.053.053.626-1.17 1.52 2.071 1.39.628-.052-.637 2.031 1.945 1.053 1.06-1.732.521.365 1.732-1.06-.365-.521 1.06-1.732-1.945-1.053-.053-.626 1.17-1.52-2.071-1.39-.628.052.637-2.031z"/>
+          </svg>
+          <span>Rust</span>
+        </div>
+
+        <!-- OIDC -->
+        <div class="badge-ocean">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+          </svg>
+          <span>OIDC / OAuth 2.1</span>
+        </div>
+
+        <!-- Hexagonal -->
+        <div class="badge-purple">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+          </svg>
+          <span>Hexagonal Architecture</span>
+        </div>
+
+        <!-- Cloud Native -->
+        <div class="badge-success">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+          </svg>
+          <span>Cloud Native</span>
+        </div>
+
+        <!-- Performance -->
+        <div class="badge-secondary">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          </svg>
+          <span>~10ms latency</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <a href="#features" class="absolute bottom-1/5 left-1/2 -translate-x-1/2 text-slate-400 hover:text-slate-300 transition-colors animate-bounce z-50">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
+    <span class="sr-only">Scroll to features</span>
+  </a>
+</section>
