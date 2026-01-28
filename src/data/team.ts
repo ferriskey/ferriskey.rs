@@ -55,6 +55,16 @@ export const coreTeam: TeamMember[] = [
   },
   {
     id: "5",
+    name: "Luis Daniel Rubiera Guzman",
+    role: "CTO Cloud IAM",
+    avatar: "/core/luis.jpeg",
+    bio: "Experienced CTO with a passion for identity and access management solutions.",
+    location: "Montpellier, France",
+    github: "courtcircuits",
+    linkedin: "luis-daniel-rubiera-guzman/",
+  },
+  {
+    id: "6",
     name: "Tristan Radulescu",
     role: "Software Engineer",
     avatar: "/core/tristan.jpeg",
