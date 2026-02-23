@@ -53,19 +53,6 @@ resources:
     cpu: 200m
     memory: 128Mi
 
-livenessProbe:
-  httpGet:
-    path: /
-    port: http
-  initialDelaySeconds: 5
-  periodSeconds: 20
-
-readinessProbe:
-  httpGet:
-    path: /
-    port: http
-  initialDelaySeconds: 3
-  periodSeconds: 10
 
 volumes: []
 volumeMounts: []
