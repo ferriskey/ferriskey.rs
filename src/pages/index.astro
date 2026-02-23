@@ -5,7 +5,7 @@ import ConsolePreview from '../components/ConsolePreview.astro';
 import Features from '../components/Features.astro';
 import ModulesGrid from '../components/ModulesGrid.astro';
 import SponsorsSection from '../components/SponsorsSection.astro';
-import TeamSection from '../components/TeamSection';
+import TeamSection from '../components/TeamSection.astro';
 import ContributorsSection from '../components/ContributorsSection.astro';
 import CTASection from '../components/CTASection.astro';
 
@@ -24,7 +24,7 @@ import '../styles/global.css'
   <Features />
   <ModulesGrid />
   <SponsorsSection sponsors={sponsors} />
-  <TeamSection team={coreTeam} client:load />
+  <TeamSection team={coreTeam} />
   <ContributorsSection />
   <CTASection />
 </Layout>

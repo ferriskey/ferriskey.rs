@@ -2,18 +2,27 @@
 // Hero section - two-column layout with console preview
 ---
 
-<section class="relative min-h-screen flex items-center overflow-hidden pt-20">
+<section class="relative min-h-screen flex items-center overflow-hidden pt-16">
   <!-- Background -->
   <div class="absolute inset-0 bg-grid opacity-20"></div>
 
   <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-80px)] py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-64px)] pb-8">
 
       <!-- Left: Text Content -->
       <div class="flex flex-col justify-center">
         <!-- Badge -->
-        <div class="inline-flex items-center gap-2 mb-6 hero-badge">
-          <span class="text-xs font-mono text-slate-400 uppercase tracking-widest">Open Source · Apache 2.0 · Early Access · v0.3</span>
+        <div class="flex flex-wrap items-center gap-2 mb-6 hero-badge">
+          <span class="inline-flex items-center gap-1.5 bg-ferris-500/10 border border-ferris-500/20 text-ferris-400 text-xs font-mono px-3 py-1 rounded-full">
+            <span class="w-1.5 h-1.5 rounded-full bg-ferris-400 animate-pulse"></span>
+            Early Access · v0.3
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-slate-800/60 border border-slate-700/50 text-slate-400 text-xs font-mono px-3 py-1 rounded-full">
+            Apache 2.0
+          </span>
+          <span class="inline-flex items-center gap-1.5 bg-slate-800/60 border border-slate-700/50 text-slate-400 text-xs font-mono px-3 py-1 rounded-full">
+            Open Source
+          </span>
         </div>
 
         <!-- Headline -->

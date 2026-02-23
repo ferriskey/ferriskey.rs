@@ -63,17 +63,6 @@ export const coreTeam: TeamMember[] = [
     github: "courtcircuits",
     linkedin: "luis-daniel-rubiera-guzman/",
   },
-  {
-    id: "6",
-    name: "Tristan Radulescu",
-    role: "Software Engineer",
-    avatar: "/core/tristan.jpeg",
-    bio: "Full-stack developer passionate about open source technologies and innovation.",
-    location: "Montpellier, France",
-    github: "courtcircuits",
-    linkedin: "tristan-mihai-radulescu-917859228",
-    website: "https://courtcircuit.xyz/",
-  },
 ];
 
 export const getTeamMemberById = (id: string): TeamMember | undefined => {
