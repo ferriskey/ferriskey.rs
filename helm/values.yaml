@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: ghcr.io/ferriskey/ferriskey-landing-page
   pullPolicy: IfNotPresent
-  tag: "743cc51"
+  tag: "3773db4"
 
 imagePullSecrets: []
 nameOverride: ""
