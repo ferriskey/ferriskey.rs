@@ -1,13 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
+import ConsolePreview from '../components/ConsolePreview.astro';
 import Features from '../components/Features.astro';
 import ModulesGrid from '../components/ModulesGrid.astro';
 import SponsorsSection from '../components/SponsorsSection.astro';
 import TeamSection from '../components/TeamSection';
 import ContributorsSection from '../components/ContributorsSection.astro';
+import CTASection from '../components/CTASection.astro';
 
-import { modules } from '../data/modules';
 import { sponsors } from '../data/sponsors';
 import { coreTeam } from '../data/team';
 
@@ -18,44 +19,12 @@ import '../styles/global.css'
   title="FerrisKey — Modern Open-Source IAM in Rust"
   description="FerrisKey is a modern, high-performance Identity and Access Management (IAM) solution built in Rust. Open-source, cloud-native, and designed for scalability."
 >
-  <!-- Hero Section -->
   <Hero />
-
-  <!-- Features Section -->
+  <ConsolePreview />
   <Features />
-
-  <!-- Modules Section -->
-  <section id="modules" class="py-24 relative">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <!-- Section Header -->
-      <div class="max-w-3xl mx-auto text-center mb-16">
-        <h2 class="text-4xl sm:text-5xl font-bold mb-6">
-          <span class="text-white">Modular</span>
-          <span class="text-gradient"> Ecosystem</span>
-        </h2>
-        <p class="text-xl text-gray-400">
-            FerrisKey is built as an ecosystem of independent but interconnected modules.
-            Choose and deploy only what you need.
-        </p>
-      </div>
-
-      <!-- Modules Grid Component -->
-      <ModulesGrid />
-    </div>
-  </section>
-
-
-  <!-- Sponsors Section -->
+  <ModulesGrid />
   <SponsorsSection sponsors={sponsors} />
-
-  <!-- Team Section -->
-  <TeamSection team={coreTeam}  />
-
-  <!-- Contributors Section -->
+  <TeamSection team={coreTeam} client:load />
   <ContributorsSection />
-
+  <CTASection />
 </Layout>
-
-<style>
-  /* Additional page-specific styles if needed */
-</style>

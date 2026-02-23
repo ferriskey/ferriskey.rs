@@ -1,119 +1,284 @@
 ---
-// Modern Hero section inspired by Scaleway's clean design
+// Hero section - two-column layout with console preview
 ---
 
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-  <!-- Background decoration -->
-  <div class="absolute inset-0 bg-grid opacity-30"></div>
-  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/50 to-slate-950"></div>
+<section class="relative min-h-screen flex items-center overflow-hidden pt-20">
+  <!-- Background -->
+  <div class="absolute inset-0 bg-grid opacity-20"></div>
 
-  <!-- Floating shapes -->
-  <div class="absolute top-1/4 left-10 w-72 h-72 bg-ferris-500/5 rounded-full blur-3xl animate-pulse"></div>
-  <div class="absolute bottom-1/4 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-80px)] py-16">
 
-  <div class="container-custom relative z-10">
-    <div class="max-w-6xl mx-auto text-center section-py">
+      <!-- Left: Text Content -->
+      <div class="flex flex-col justify-center">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 mb-6 hero-badge">
+          <span class="text-xs font-mono text-slate-400 uppercase tracking-widest">Open Source · Apache 2.0 · Early Access · v0.3</span>
+        </div>
 
-      <!-- Badge -->
-      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 animate-fade-in-down">
-        <span class="relative flex h-2 w-2">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-        </span>
-        <span class="text-sm font-medium text-slate-300">Open Source • Ready to use • v0.1</span>
+        <!-- Headline -->
+        <h1 class="text-5xl sm:text-6xl font-bold leading-tight mb-6 hero-title">
+          <span class="text-white">A Modern IAM Built</span><br/>
+          <span class="text-white">for</span>
+          <span class="text-gradient"> Distributed</span><br/>
+          <span class="text-white">Systems</span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="text-lg text-slate-400 mb-8 max-w-lg leading-relaxed hero-sub">
+          FerrisKey is an open-source, cloud-native Identity & Access Management platform designed for Kubernetes, multi-tenancy, and modern security architectures.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap gap-4 hero-cta">
+          <a
+            href="https://docs.ferriskey.rs/en/getting-started/introduction"
+            target="_blank"
+            class="inline-flex items-center gap-2 bg-ferris-500 hover:bg-ferris-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200"
+          >
+            Get Started
+          </a>
+          <a
+            href="https://docs.ferriskey.rs"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white font-semibold px-6 py-3 rounded-lg transition-colors duration-200"
+          >
+            Read the Docs
+          </a>
+        </div>
       </div>
 
-      <!-- Main Headline -->
-      <h1 class="mb-6 animate-fade-in-up">
-        <span class="block text-white mb-2">Modern Identity & Access Management</span>
-        <span class="block text-gradient">Built with Rust</span>
-      </h1>
+      <!-- Right: SI diagram — IAM at the center -->
+      <div class="flex justify-center lg:justify-end items-center hero-diagram">
+        <!--
+          Tout le schéma est un seul SVG avec viewBox fixe (480×400).
+          Cela garantit que les lignes partent exactement depuis les bords des boîtes.
 
-      <!-- Subheadline -->
-      <p class="text-xl md:text-2xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style="animation-delay: 0.1s;">
-          FerrisKey is a powerful, secure, and scalable open-source IAM solution.
-          Cloud-ready and easy to deploy.
-      </p>
+          Layout (en unités SVG) :
+          - Col gauche  : x 0–148  (nodes w=148)
+          - Gutter       : 16px de chaque côté du centre
+          - Centre hub   : x 172–308 (hub w=136, centré à x=240)
+          - Col droite   : x 332–480 (nodes w=148)
 
-      <!-- CTA Buttons - Improved design -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in-up" style="animation-delay: 0.2s;">
-        <a href="https://docs.ferriskey.rs/en/getting-started/introduction" target="_blank" class="group relative overflow-hidden bg-gradient-to-r from-ferris-500 to-ferris-600 text-white font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 inline-flex items-center gap-2">
+          Nodes height=36, gap=12
+          Label col : h=16
+          py haut/bas : 20
 
-          <div class="absolute inset-0 bg-gradient-to-r from-ferris-400 to-ferris-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-          <span class="relative z-10 flex items-center gap-2">
-            <span>Get Started</span>
-            <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          Y positions (top of each node, label inclus) :
+          label top  = 20
+          node1 top  = 20+16+4  = 40   → centre y = 40+18 = 58
+          node2 top  = 58+18+12 = 88   → centre y = 88+18 = 106
+          node3 top  = 106+18+12= 136  → centre y = 136+18= 154
+          node4 top  = 154+18+12= 184  → centre y = 184+18= 202
+
+          Total height ≈ 202+18+20 = 240   →  viewBox height = 260
+
+          Hub centré verticalement : cx=240, cy=130, w=112, h=112
+          → hub top = 74, hub bottom = 186, cy hub = 130
+        -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 480 260"
+          class="w-full max-w-xl diagram-svg"
+          role="img"
+          aria-label="FerrisKey IAM architecture diagram"
+        >
+          <defs>
+            <filter id="hub-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="8" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <!-- ── Lignes de connexion (tracées après les nodes) ── -->
+          <!-- longueur approximative des lignes pour stroke-dashoffset :
+               L gauche ≈ 85px max, droite ≈ 85px max → on utilise 120 pour couvrir toutes -->
+          <g class="anim-lines">
+            <line class="line-left" x1="148" y1="58"  x2="172" y2="130" stroke="rgba(249,115,22,0.3)" stroke-width="1.5" stroke-dasharray="120" stroke-dashoffset="120"/>
+            <line class="line-left" x1="148" y1="106" x2="172" y2="130" stroke="rgba(249,115,22,0.3)" stroke-width="1.5" stroke-dasharray="120" stroke-dashoffset="120"/>
+            <line class="line-left" x1="148" y1="154" x2="172" y2="130" stroke="rgba(249,115,22,0.3)" stroke-width="1.5" stroke-dasharray="120" stroke-dashoffset="120"/>
+            <line class="line-left" x1="148" y1="202" x2="172" y2="130" stroke="rgba(249,115,22,0.3)" stroke-width="1.5" stroke-dasharray="120" stroke-dashoffset="120"/>
+            <line class="line-right" x1="308" y1="130" x2="332" y2="58"  stroke="rgba(14,165,233,0.3)" stroke-width="1.5" stroke-dasharray="120" stroke-dashoffset="120"/>
+            <line class="line-right" x1="308" y1="130" x2="332" y2="106" stroke="rgba(14,165,233,0.3)" stroke-width="1.5" stroke-dasharray="120" stroke-dashoffset="120"/>
+            <line class="line-right" x1="308" y1="130" x2="332" y2="154" stroke="rgba(14,165,233,0.3)" stroke-width="1.5" stroke-dasharray="120" stroke-dashoffset="120"/>
+            <line class="line-right" x1="308" y1="130" x2="332" y2="202" stroke="rgba(14,165,233,0.3)" stroke-width="1.5" stroke-dasharray="120" stroke-dashoffset="120"/>
+          </g>
+
+          <!-- ── Col gauche : Consumers ── -->
+          <g class="anim-left">
+            <text x="74" y="34" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#64748b" letter-spacing="1.5">CONSUMERS</text>
+
+            <rect x="0" y="40" width="148" height="36" rx="8" fill="rgba(249,115,22,0.04)" stroke="rgba(249,115,22,0.2)" stroke-width="1"/>
+            <svg x="10" y="49" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(249,115,22,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
             </svg>
-          </span>
-        </a>
+            <text x="35" y="63" font-family="ui-monospace,monospace" font-size="11" fill="#94a3b8" font-weight="500">Web App</text>
 
-        <a href="https://github.com/ferriskey/ferriskey" target="_blank" rel="noopener noreferrer" class="group relative overflow-hidden bg-slate-800/80 border border-slate-700/50 text-slate-100 font-semibold px-8 py-4 rounded-xl hover:bg-slate-700/80 hover:border-slate-600/50 transition-all duration-300 inline-flex items-center gap-2 hover:shadow-lg">
-          <svg class="w-5 h-5 transition-transform group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24">
-            <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
-          </svg>
-          <span>View on GitHub</span>
-        </a>
+            <rect x="0" y="88" width="148" height="36" rx="8" fill="rgba(249,115,22,0.04)" stroke="rgba(249,115,22,0.2)" stroke-width="1"/>
+            <svg x="10" y="97" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(249,115,22,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+            </svg>
+            <text x="35" y="111" font-family="ui-monospace,monospace" font-size="11" fill="#94a3b8" font-weight="500">Mobile App</text>
 
-        <a href="https://docs.ferriskey.rs" target="_blank" rel="noopener noreferrer" class="group bg-transparent text-slate-300 font-semibold px-8 py-4 rounded-xl hover:bg-slate-800/50 hover:text-slate-100 transition-all duration-300 inline-flex items-center gap-2">
-          <svg class="w-5 h-5 transition-transform group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-          </svg>
-          <span>Documentation</span>
-        </a>
+            <rect x="0" y="136" width="148" height="36" rx="8" fill="rgba(249,115,22,0.04)" stroke="rgba(249,115,22,0.2)" stroke-width="1"/>
+            <svg x="10" y="145" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(249,115,22,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+            <text x="35" y="159" font-family="ui-monospace,monospace" font-size="11" fill="#94a3b8" font-weight="500">API / CLI</text>
+
+            <rect x="0" y="184" width="148" height="36" rx="8" fill="rgba(249,115,22,0.04)" stroke="rgba(249,115,22,0.2)" stroke-width="1"/>
+            <svg x="10" y="193" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(249,115,22,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
+            </svg>
+            <text x="35" y="207" font-family="ui-monospace,monospace" font-size="11" fill="#94a3b8" font-weight="500">End Users</text>
+          </g>
+
+          <!-- ── Hub FerrisKey ── -->
+          <g class="anim-hub">
+            <ellipse cx="240" cy="130" rx="58" ry="58" fill="rgba(249,115,22,0.12)" filter="url(#hub-glow)" class="hub-glow-pulse"/>
+            <rect x="172" y="74" width="136" height="112" rx="16" fill="#0f172a" stroke="rgba(249,115,22,0.55)" stroke-width="1.5"/>
+            <image href="/ferriskey.png" x="200" y="88" width="80" height="80" preserveAspectRatio="xMidYMid meet"/>
+            <text x="240" y="174" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="rgba(249,115,22,0.85)" font-weight="700" letter-spacing="0.5">FerrisKey IAM</text>
+          </g>
+
+          <!-- ── Col droite : Platform ── -->
+          <g class="anim-right">
+            <text x="406" y="34" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#64748b" letter-spacing="1.5">PLATFORM</text>
+
+            <rect x="332" y="40" width="148" height="36" rx="8" fill="rgba(14,165,233,0.04)" stroke="rgba(14,165,233,0.2)" stroke-width="1"/>
+            <svg x="342" y="49" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(14,165,233,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/>
+            </svg>
+            <text x="367" y="63" font-family="ui-monospace,monospace" font-size="11" fill="#94a3b8" font-weight="500">Kubernetes</text>
+
+            <rect x="332" y="88" width="148" height="36" rx="8" fill="rgba(14,165,233,0.04)" stroke="rgba(14,165,233,0.2)" stroke-width="1"/>
+            <svg x="342" y="97" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(14,165,233,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+            </svg>
+            <text x="367" y="111" font-family="ui-monospace,monospace" font-size="11" fill="#94a3b8" font-weight="500">ArgoCD</text>
+
+            <rect x="332" y="136" width="148" height="36" rx="8" fill="rgba(14,165,233,0.04)" stroke="rgba(14,165,233,0.2)" stroke-width="1"/>
+            <svg x="342" y="145" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(14,165,233,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+            </svg>
+            <text x="367" y="159" font-family="ui-monospace,monospace" font-size="11" fill="#94a3b8" font-weight="500">Prometheus</text>
+
+            <rect x="332" y="184" width="148" height="36" rx="8" fill="rgba(14,165,233,0.04)" stroke="rgba(14,165,233,0.2)" stroke-width="1"/>
+            <svg x="342" y="193" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(14,165,233,0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+            </svg>
+            <text x="367" y="207" font-family="ui-monospace,monospace" font-size="11" fill="#94a3b8" font-weight="500">OpenTelemetry</text>
+          </g>
+
+          <!-- ── Caption ── -->
+          <text class="anim-caption" x="240" y="248" text-anchor="middle" font-family="ui-monospace,monospace" font-size="9" fill="#475569" letter-spacing="0.3">
+            IAM as the single identity layer across your entire information system
+          </text>
+        </svg>
       </div>
 
-      <!-- Key Features Badges - Clean Scaleway style -->
-      <div class="flex flex-wrap items-center justify-center gap-3 mb-20 animate-fade-in" style="animation-delay: 0.3s;">
-
-        <!-- Rust -->
-        <div class="badge-primary">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M23.834 13.93l-1.053-1.945-2.031.637.052-.628-1.39-2.071-1.52 1.17-.626-.053-1.053-1.945-1.732 1.06-.521-.365-1.732 1.06.365.521-1.06 1.732 1.945 1.053.053.626-1.17 1.52 2.071 1.39.628-.052-.637 2.031 1.945 1.053 1.06-1.732.521.365 1.732-1.06-.365-.521 1.06-1.732-1.945-1.053-.053-.626 1.17-1.52-2.071-1.39-.628.052.637-2.031z"/>
-          </svg>
-          <span>Rust</span>
-        </div>
-
-        <!-- OIDC -->
-        <div class="badge-ocean">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-          </svg>
-          <span>OIDC / OAuth 2.1</span>
-        </div>
-
-        <!-- Hexagonal -->
-        <div class="badge-purple">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-          </svg>
-          <span>Hexagonal Architecture</span>
-        </div>
-
-        <!-- Cloud Native -->
-        <div class="badge-success">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
-          </svg>
-          <span>Cloud Native</span>
-        </div>
-
-        <!-- Performance -->
-        <div class="badge-secondary">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-          </svg>
-          <span>~10ms latency</span>
-        </div>
-      </div>
     </div>
   </div>
-
-  <!-- Scroll indicator -->
-  <a href="#features" class="absolute bottom-1/5 left-1/2 -translate-x-1/2 text-slate-400 hover:text-slate-300 transition-colors animate-bounce z-50">
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-    </svg>
-    <span class="sr-only">Scroll to features</span>
-  </a>
 </section>
+
+<style>
+  /* ════════════════════════════════
+     Partie texte (colonne gauche)
+     Chaque élément glisse vers le haut + fade in,
+     avec un délai croissant.
+  ════════════════════════════════ */
+  .hero-badge {
+    animation: hero-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0s both;
+  }
+  .hero-title {
+    animation: hero-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+  }
+  .hero-sub {
+    animation: hero-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.22s both;
+  }
+  .hero-cta {
+    animation: hero-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.34s both;
+  }
+  /* Diagramme : fade in depuis la droite, légèrement décalé */
+  .hero-diagram {
+    animation: hero-right 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+  }
+
+  @keyframes hero-up {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes hero-right {
+    from { opacity: 0; transform: translateX(32px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  /* ════════════════════════════════
+     Partie schéma SVG
+  ════════════════════════════════ */
+
+  /* ── Nodes gauche : glissent depuis la gauche ── */
+  .anim-left {
+    animation: slide-from-left 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+  }
+
+  /* ── Nodes droite : glissent depuis la droite ── */
+  .anim-right {
+    animation: slide-from-right 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.65s both;
+  }
+
+  /* ── Hub : scale + fade in ── */
+  .anim-hub {
+    animation: scale-in 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.85s both;
+    transform-origin: 240px 130px;
+  }
+
+  /* ── Lignes : tracées après le hub ── */
+  .anim-lines .line-left {
+    animation: draw-line 0.5s ease-out 1.15s both;
+  }
+  .anim-lines .line-right {
+    animation: draw-line 0.5s ease-out 1.3s both;
+  }
+
+  /* ── Caption : fade in en dernier ── */
+  .anim-caption {
+    animation: fade-in 0.4s ease-out 1.5s both;
+  }
+
+  /* ── Glow qui pulse en boucle ── */
+  .hub-glow-pulse {
+    animation: glow-pulse 3s ease-in-out 1.2s infinite;
+  }
+
+  @keyframes slide-from-left {
+    from { opacity: 0; transform: translateX(-24px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes slide-from-right {
+    from { opacity: 0; transform: translateX(24px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes scale-in {
+    from { opacity: 0; transform: scale(0.75); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes draw-line {
+    from { stroke-dashoffset: 120; opacity: 0; }
+    to   { stroke-dashoffset: 0;   opacity: 1; }
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.7; r: 58; }
+    50%       { opacity: 1;   r: 68; }
+  }
+</style>

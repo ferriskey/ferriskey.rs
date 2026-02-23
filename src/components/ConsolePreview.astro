@@ -1,0 +1,179 @@
+---
+// Console Preview section - product screenshots grid
+---
+
+<section id="console-preview" class="py-24 relative">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section Label -->
+    <div class="mb-12 reveal">
+      <p class="text-xs text-ferris-400 font-mono uppercase tracking-widest mb-3">Console Preview</p>
+      <h2 class="text-4xl sm:text-5xl font-bold text-white mb-4">
+        Product Console Preview
+      </h2>
+      <p class="text-lg text-slate-400 max-w-2xl">
+        Control realms, clients, tokens, policies and observability from a single operator-first console.
+      </p>
+    </div>
+
+    <!-- Screenshots Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <!-- Realm Management -->
+      <div class="group bg-slate-900/70 border border-slate-700/50 rounded-xl overflow-hidden hover:border-ferris-500/30 transition-colors duration-300 reveal reveal-delay-1">
+        <div class="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 relative">
+          <!-- Mock UI -->
+          <div class="absolute inset-0 p-3">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-2 h-2 rounded-full bg-ferris-500"></div>
+              <div class="h-1.5 w-16 bg-slate-700 rounded"></div>
+            </div>
+            <div class="space-y-1.5">
+              <div class="h-6 bg-slate-800 rounded flex items-center px-2">
+                <div class="w-8 h-1.5 bg-slate-600 rounded"></div>
+              </div>
+              <div class="h-6 bg-ferris-500/10 border border-ferris-500/20 rounded flex items-center px-2">
+                <div class="w-12 h-1.5 bg-ferris-400/50 rounded"></div>
+              </div>
+              <div class="h-6 bg-slate-800 rounded flex items-center px-2">
+                <div class="w-10 h-1.5 bg-slate-600 rounded"></div>
+              </div>
+              <div class="h-6 bg-slate-800 rounded flex items-center px-2">
+                <div class="w-14 h-1.5 bg-slate-600 rounded"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-3 border-t border-slate-700/50">
+          <p class="text-xs text-slate-400">Realm management</p>
+        </div>
+      </div>
+
+      <!-- Client Configuration -->
+      <div class="group bg-slate-900/70 border border-slate-700/50 rounded-xl overflow-hidden hover:border-ferris-500/30 transition-colors duration-300 reveal reveal-delay-2">
+        <div class="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 relative">
+          <div class="absolute inset-0 p-3">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <div class="w-2 h-2 rounded-full bg-ocean-400"></div>
+                <div class="h-1.5 w-20 bg-slate-700 rounded"></div>
+              </div>
+              <div class="h-5 w-10 bg-ferris-500/20 border border-ferris-500/30 rounded text-center">
+                <div class="h-1.5 w-6 bg-ferris-400/40 rounded mx-auto mt-1.5"></div>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-1.5">
+              <div class="h-10 bg-slate-800 rounded p-1.5">
+                <div class="h-1.5 w-8 bg-slate-600 rounded mb-1"></div>
+                <div class="h-1.5 w-12 bg-slate-700 rounded"></div>
+              </div>
+              <div class="h-10 bg-slate-800 rounded p-1.5">
+                <div class="h-1.5 w-6 bg-slate-600 rounded mb-1"></div>
+                <div class="h-1.5 w-10 bg-slate-700 rounded"></div>
+              </div>
+              <div class="h-10 bg-slate-800 rounded p-1.5">
+                <div class="h-1.5 w-10 bg-slate-600 rounded mb-1"></div>
+                <div class="h-1.5 w-8 bg-slate-700 rounded"></div>
+              </div>
+              <div class="h-10 bg-slate-800 rounded p-1.5">
+                <div class="h-1.5 w-7 bg-slate-600 rounded mb-1"></div>
+                <div class="h-1.5 w-11 bg-slate-700 rounded"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-3 border-t border-slate-700/50">
+          <p class="text-xs text-slate-400">Client configuration</p>
+        </div>
+      </div>
+
+      <!-- Token Inspection -->
+      <div class="group bg-slate-900/70 border border-slate-700/50 rounded-xl overflow-hidden hover:border-ferris-500/30 transition-colors duration-300 reveal reveal-delay-3">
+        <div class="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 relative">
+          <div class="absolute inset-0 p-3 font-mono text-[9px]">
+            <div class="text-slate-500 mb-1">JWT Token Inspector</div>
+            <div class="text-green-400/70">{"{"}</div>
+            <div class="pl-2 text-slate-400">"sub": <span class="text-orange-300/70">"usr_9f2k..."</span>,</div>
+            <div class="pl-2 text-slate-400">"realm": <span class="text-green-300/70">"prod"</span>,</div>
+            <div class="pl-2 text-slate-400">"roles": <span class="text-blue-300/70">["admin"]</span>,</div>
+            <div class="pl-2 text-slate-400">"exp": <span class="text-purple-300/70">1739123456</span></div>
+            <div class="text-green-400/70">{"}"}</div>
+          </div>
+        </div>
+        <div class="p-3 border-t border-slate-700/50">
+          <p class="text-xs text-slate-400">Token inspection</p>
+        </div>
+      </div>
+
+      <!-- Observability Dashboard -->
+      <div class="group bg-slate-900/70 border border-slate-700/50 rounded-xl overflow-hidden hover:border-ferris-500/30 transition-colors duration-300 md:col-span-1 reveal reveal-delay-4">
+        <div class="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 relative">
+          <div class="absolute inset-0 p-3">
+            <div class="text-[9px] text-slate-500 font-mono mb-2">Observability Dashboard</div>
+            <!-- Mini chart bars -->
+            <div class="flex items-end gap-0.5 h-12">
+              {[40, 65, 45, 80, 60, 90, 70, 55, 85, 75, 50, 95].map((h) => (
+                <div class="flex-1 bg-ferris-500/30 rounded-sm" style={`height: ${h}%`}></div>
+              ))}
+            </div>
+            <div class="mt-2 flex gap-2">
+              <div class="flex items-center gap-1">
+                <div class="w-1.5 h-1.5 rounded-full bg-ferris-400"></div>
+                <span class="text-[9px] text-slate-500">Auth events</span>
+              </div>
+              <div class="flex items-center gap-1">
+                <div class="w-1.5 h-1.5 rounded-full bg-ocean-400"></div>
+                <span class="text-[9px] text-slate-500">Latency</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-3 border-t border-slate-700/50">
+          <p class="text-xs text-slate-400">Observability dashboard</p>
+        </div>
+      </div>
+
+      <!-- Policy Configuration -->
+      <div class="group bg-slate-900/70 border border-slate-700/50 rounded-xl overflow-hidden hover:border-ferris-500/30 transition-colors duration-300 md:col-span-2 reveal reveal-delay-5">
+        <div class="aspect-video bg-gradient-to-br from-slate-800 to-slate-900 relative">
+          <div class="absolute inset-0 p-4">
+            <div class="text-[9px] text-slate-500 font-mono mb-2">Policy configuration</div>
+            <div class="grid grid-cols-2 gap-3">
+              <div class="space-y-1.5">
+                <div class="flex items-center justify-between h-6 bg-slate-800/80 rounded px-2">
+                  <div class="h-1.5 w-16 bg-slate-600 rounded"></div>
+                  <div class="h-3 w-6 bg-green-500/30 border border-green-500/40 rounded-sm"></div>
+                </div>
+                <div class="flex items-center justify-between h-6 bg-slate-800/80 rounded px-2">
+                  <div class="h-1.5 w-12 bg-slate-600 rounded"></div>
+                  <div class="h-3 w-6 bg-ferris-500/30 border border-ferris-500/40 rounded-sm"></div>
+                </div>
+                <div class="flex items-center justify-between h-6 bg-slate-800/80 rounded px-2">
+                  <div class="h-1.5 w-20 bg-slate-600 rounded"></div>
+                  <div class="h-3 w-6 bg-green-500/30 border border-green-500/40 rounded-sm"></div>
+                </div>
+              </div>
+              <div class="space-y-1.5">
+                <div class="flex items-center justify-between h-6 bg-slate-800/80 rounded px-2">
+                  <div class="h-1.5 w-14 bg-slate-600 rounded"></div>
+                  <div class="h-3 w-6 bg-slate-700 rounded-sm"></div>
+                </div>
+                <div class="flex items-center justify-between h-6 bg-slate-800/80 rounded px-2">
+                  <div class="h-1.5 w-10 bg-slate-600 rounded"></div>
+                  <div class="h-3 w-6 bg-green-500/30 border border-green-500/40 rounded-sm"></div>
+                </div>
+                <div class="flex items-center justify-between h-6 bg-slate-800/80 rounded px-2">
+                  <div class="h-1.5 w-18 bg-slate-600 rounded"></div>
+                  <div class="h-3 w-6 bg-ferris-500/30 border border-ferris-500/40 rounded-sm"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-3 border-t border-slate-700/50">
+          <p class="text-xs text-slate-400">Policy configuration</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

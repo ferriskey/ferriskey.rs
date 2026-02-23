@@ -1,46 +1,39 @@
 ---
-// Footer component for FerrisKey
+// Footer - clean minimal footer matching the mockup
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="relative border-t border-gray-800/50 bg-deep-900/50 backdrop-blur-sm mt-20">
+<footer class="relative border-t border-slate-800/50 py-12">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Main Footer Content -->
-    <div class="py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <!-- About FerrisKey -->
-      <div class="lg:col-span-2">
-        <div class="flex items-center space-x-3 mb-4">
-          <div class="w-10 h-10 flex items-center justify-center bg-gradient-ferris rounded-lg">
-              <img src="/ferriskey.png" alt="FerrisKey Logo" class="w-9 h-9" />
-            <!-- <span class="text-2xl">🦀</span> -->
-          </div>
-          <div>
-            <span class="text-xl font-bold text-white">FerrisKey</span>
-            <span class="block text-xs text-gray-500">by FerrisLabs</span>
-          </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-10">
+
+      <!-- Brand -->
+      <div class="md:col-span-1">
+        <div class="flex items-center gap-2.5 mb-4">
+          <img src="/ferriskey.png" alt="FerrisKey" class="w-7 h-7" />
+          <span class="text-white font-bold">FerrisKey</span>
         </div>
-        <p class="text-gray-400 mb-4 max-w-md leading-relaxed">
-            A modern, high-performance, cloud-native open-source IAM solution built in Rust.
-            Designed for distributed architectures and demanding teams.
+        <p class="text-slate-500 text-sm leading-relaxed mb-4 max-w-xs">
+          Modern open-source IAM built in Rust for cloud-native platforms.
         </p>
-        <div class="flex items-center space-x-3">
+        <div class="flex items-center gap-3">
           <a
             href="https://github.com/ferriskey/ferriskey"
             target="_blank"
             rel="noopener noreferrer"
-            class="w-10 h-10 flex items-center justify-center rounded-lg bg-deep-800 border border-gray-800 hover:border-ferris-500 hover:bg-deep-700 transition-all duration-300"
+            class="text-slate-500 hover:text-slate-300 transition-colors"
             aria-label="GitHub"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
               <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
             </svg>
           </a>
-
           <a
             href="https://discord.gg/WVV5rq8ANb"
             target="_blank"
             rel="noopener noreferrer"
-            class="w-10 h-10 flex items-center justify-center rounded-lg bg-deep-800 border border-gray-800 hover:border-ferris-500 hover:bg-deep-700 transition-all duration-300"
+            class="text-slate-500 hover:text-slate-300 transition-colors"
             aria-label="Discord"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -50,82 +43,48 @@ const currentYear = new Date().getFullYear();
         </div>
       </div>
 
-      <!-- Resources -->
+      <!-- Product -->
       <div>
-        <h3 class="text-white font-semibold mb-4">Resources</h3>
+        <h4 class="text-white font-semibold text-sm mb-4">Product</h4>
         <ul class="space-y-2">
-          <li>
-            <a href="https://docs.ferriskey.rs" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-ferris-400 transition-colors">
-              Documentation
-            </a>
-          </li>
-          <li>
-            <a href="https://docs.ferriskey.rs/api" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-ferris-400 transition-colors">
-              API Reference
-            </a>
-          </li>
+          <li><a href="#console-preview" class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Features</a></li>
+          <li><a href="#modules" class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Modules</a></li>
+          <li><a href="https://docs.ferriskey.rs" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Documentation</a></li>
         </ul>
       </div>
 
       <!-- Community -->
       <div>
-        <h3 class="text-white font-semibold mb-4">Community</h3>
+        <h4 class="text-white font-semibold text-sm mb-4">Community</h4>
         <ul class="space-y-2">
-          <li>
-            <a href="https://github.com/ferriskey/ferriskey" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-ferris-400 transition-colors">
-              GitHub
-            </a>
-          </li>
-          <li>
-            <a href="https://discord.gg/WVV5rq8ANb" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-ferris-400 transition-colors">
-              Discord
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/ferriskey/ferriskey/discussions" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-ferris-400 transition-colors">
-              Discussions
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/ferriskey/ferriskey/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-ferris-400 transition-colors">
-                Contributing
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/sponsors/ferriskey" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-ferris-400 transition-colors">
-              Sponsoring
-            </a>
-          </li>
+          <li><a href="https://github.com/ferriskey/ferriskey" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-slate-300 text-sm transition-colors">GitHub</a></li>
+          <li><a href="https://discord.gg/WVV5rq8ANb" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Discord</a></li>
+          <li><a href="https://github.com/ferriskey/ferriskey/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Contributing</a></li>
+          <li><a href="https://github.com/sponsors/ferriskey" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Sponsoring</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4">Legal</h4>
+        <ul class="space-y-2">
+          <li><a href="https://github.com/ferriskey/ferriskey/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Apache 2.0 License</a></li>
+          <li><a href="https://github.com/ferriskey/ferriskey" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-slate-300 text-sm transition-colors">Security Policy</a></li>
         </ul>
       </div>
     </div>
 
-    <!-- Bottom Bar -->
-    <div class="border-t border-gray-800 py-6">
-      <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-        <!-- Copyright -->
-        <div class="text-sm text-gray-500 text-center md:text-left">
-          © {currentYear} <a href="https://ferrislabs.io" target="_blank" rel="noopener noreferrer" class="text-ferris-400 hover:text-ferris-300 transition-colors">FerrisKey</a>.
-          All rights reserved.
-          <span class="inline-block mx-2">•</span>
-          <span class="inline-flex items-center">
-            <span class="mr-1">Open Source on</span>
-            <a href="https://github.com/ferriskey/ferriskey/blob/main/LICENSE" target="_blank" rel="noopener noreferrer" class="text-ferris-400 hover:text-ferris-300 transition-colors">
-              Apache 2.0 License
-            </a>
-          </span>
-        </div>
-      </div>
-
-      <!-- Built with love badge -->
-      <div class="mt-6 text-center">
-        <p class="text-sm text-gray-600">
-          Built with <span class="text-red-500 animate-pulse">❤️</span> and <span class="text-ferris-400">🦀</span> by the Rust community.
-        </p>
+    <!-- Bottom bar -->
+    <div class="border-t border-slate-800/50 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-slate-600 text-sm">
+        © {currentYear} FerrisKey · Apache 2.0 License
+      </p>
+      <div class="flex items-center gap-3">
+        <a href="https://discord.gg/WVV5rq8ANb" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-slate-400 text-sm transition-colors">Discord</a>
+        <span class="text-slate-800">·</span>
+        <a href="https://github.com/ferriskey/ferriskey" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-slate-400 text-sm transition-colors">GitHub</a>
       </div>
     </div>
-  </div>
 
-  <!-- Decorative gradient -->
-  <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-ferris-500/50 to-transparent"></div>
+  </div>
 </footer>

@@ -1,174 +1,112 @@
 ---
-// Features section showcasing FerrisKey core capabilities
+// Features section - comparison + 3 feature cards
 ---
 
 <section id="features" class="py-24 relative">
   <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Section Header -->
-    <div class="max-w-3xl mx-auto text-center mb-16">
-      <h2 class="text-4xl sm:text-5xl font-bold mb-6">
-        <span class="text-white">Why choose</span>
-        <span class="text-gradient"> FerrisKey</span>
-        <span class="text-white">?</span>
+
+    <!-- Section header -->
+    <div class="mb-16 reveal">
+      <p class="text-xs text-ferris-400 font-mono uppercase tracking-widest mb-3">Why FerrisKey</p>
+      <h2 class="text-4xl sm:text-5xl font-bold text-white mb-6 max-w-3xl leading-tight">
+        Identity infrastructure for cloud-native platforms, without legacy IAM complexity.
       </h2>
-      <p class="text-xl text-gray-400">
-        A modern IAM solution that combines performance, security and flexibility.
-        Built for cloud-native architectures and demanding teams.
-      </p>
-    </div>
 
-    <!-- Features Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-      <!-- Feature 1: Performance -->
-      <div class="card-hover p-8 group">
-        <div class="w-14 h-14 bg-gradient-to-br from-ferris-500 to-rust-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-          <span class="text-3xl">⚡</span>
-        </div>
-        <h3 class="text-2xl font-bold text-white mb-4">Rust Performance</h3>
-        <p class="text-gray-400 leading-relaxed mb-4">
-          Built in Rust for exceptional performance. Zero-cost abstractions,
-          optimal memory management and minimal latency for your authentications.
+      <!-- What is IAM -->
+      <div class="max-w-3xl mb-10">
+        <p class="text-lg text-slate-400 leading-relaxed mb-4">
+          Identity & Access Management (IAM) is the backbone of any secure platform. It controls <span class="text-slate-300">who can authenticate</span>, <span class="text-slate-300">what they are authorized to do</span>, and <span class="text-slate-300">how every access event is tracked</span> across every service, team, and environment in your infrastructure.
         </p>
-        <ul class="space-y-2 text-sm text-gray-500">
-          <li class="flex items-center">
-            <svg class="w-4 h-4 mr-2 text-ferris-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-            </svg>
-            <span>Latency &lt; 10ms</span>
-          </li>
-          <li class="flex items-center">
-            <svg class="w-4 h-4 mr-2 text-ferris-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-            </svg>
-            <span>Reduced memory footprint</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Feature 2: Authentication & Authorization -->
-      <div class="card-hover p-8 group">
-        <div class="w-14 h-14 bg-gradient-to-br from-ocean-500 to-ocean-700 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-          <span class="text-3xl">🔐</span>
-        </div>
-        <h3 class="text-2xl font-bold text-white mb-4">Complete Auth</h3>
-        <p class="text-gray-400 leading-relaxed mb-4">
-          Full OpenID Connect Provider with OAuth 2.0/2.1 support,
-          SAML, LDAP and modern multi-factor authentication.
+        <p class="text-lg text-slate-400 leading-relaxed">
+          Without a solid IAM foundation, teams end up with fragmented auth logic scattered across services, no unified audit trail, and security gaps that grow with every new product. FerrisKey addresses this with a <span class="text-slate-300">unified, operator-first approach</span> designed for distributed systems from day one.
         </p>
-        <ul class="space-y-2 text-sm text-gray-500">
-          <li class="flex items-center">
-            <svg class="w-4 h-4 mr-2 text-ocean-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-            </svg>
-            <span>OIDC Core 1.0 certified</span>
-          </li>
-          <li class="flex items-center">
-            <svg class="w-4 h-4 mr-2 text-ocean-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-            </svg>
-            <span>MFA & WebAuthn ready</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Feature 3: Fine-grained Permissions -->
-      <div class="card-hover p-8 group">
-        <div class="w-14 h-14 bg-gradient-to-br from-purple-500 to-purple-700 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-          <span class="text-3xl">🎯</span>
-        </div>
-        <h3 class="text-2xl font-bold text-white mb-4">Fine-grained Permissions</h3>
-        <p class="text-gray-400 leading-relaxed mb-4">
-          Granular permission system with RBAC, ABAC and advanced role management.
-          Control precisely who accesses what.
-        </p>
-        <ul class="space-y-2 text-sm text-gray-500">
-          <li class="flex items-center">
-            <svg class="w-4 h-4 mr-2 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-            </svg>
-            <span>RBAC support</span>
-          </li>
-
-        </ul>
-      </div>
-
-      <!-- Feature 4: Multi-tenancy -->
-      <div class="card-hover p-8 group">
-        <div class="w-14 h-14 bg-gradient-to-br from-teal-500 to-emerald-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-          <span class="text-3xl">🏢</span>
-        </div>
-        <h3 class="text-2xl font-bold text-white mb-4">Multi-tenancy Realms</h3>
-        <p class="text-gray-400 leading-relaxed mb-4">
-          Isolate your environments and clients with dedicated realms.
-          Independent configuration, separate data, maximum security.
-        </p>
-        <ul class="space-y-2 text-sm text-gray-500">
-          <li class="flex items-center">
-            <svg class="w-4 h-4 mr-2 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-            </svg>
-            <span>Complete isolation</span>
-          </li>
-          <li class="flex items-center">
-            <svg class="w-4 h-4 mr-2 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-            </svg>
-            <span>Per-realm configuration</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Feature 5: Observability -->
-      <div class="card-hover p-8 group">
-        <div class="w-14 h-14 bg-gradient-to-br from-yellow-500 to-orange-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-          <span class="text-3xl">📊</span>
-        </div>
-        <h3 class="text-2xl font-bold text-white mb-4">Full Observability</h3>
-        <p class="text-gray-400 leading-relaxed mb-4">
-          Immutable audit logs, real-time metrics and anomaly detection.
-          GDPR, SOC2 and ISO 27001 compliance.
-        </p>
-        <ul class="space-y-2 text-sm text-gray-500">
-          <li class="flex items-center">
-            <svg class="w-4 h-4 mr-2 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-            </svg>
-            <span>Prometheus & OpenTelemetry</span>
-          </li>
-          <li class="flex items-center">
-            <svg class="w-4 h-4 mr-2 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-            </svg>
-            <span>Complete audit logs</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Feature 6: Cloud Native & Scalable -->
-      <div class="card-hover p-8 group">
-        <div class="w-14 h-14 bg-gradient-to-br from-indigo-500 to-pink-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-          <span class="text-3xl">☁️</span>
-        </div>
-        <h3 class="text-2xl font-bold text-white mb-4">Cloud Native</h3>
-        <p class="text-gray-400 leading-relaxed mb-4">
-          Modern architecture designed for Kubernetes. Simple deployment,
-          automatic horizontal scaling and high availability.
-        </p>
-        <ul class="space-y-2 text-sm text-gray-500">
-          <li class="flex items-center">
-            <svg class="w-4 h-4 mr-2 text-pink-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-            </svg>
-            <span>Kubernetes native</span>
-          </li>
-          <li class="flex items-center">
-            <svg class="w-4 h-4 mr-2 text-pink-400" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-            </svg>
-            <span>Horizontal scaling</span>
-          </li>
-        </ul>
       </div>
     </div>
+
+    <!-- Feature pillars -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+      <!-- Rust performance -->
+      <div class="group bg-slate-900/50 border border-slate-700/50 rounded-xl p-6 hover:border-ferris-500/20 transition-colors duration-300 reveal reveal-delay-1">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-9 h-9 rounded-lg bg-ferris-500/10 flex items-center justify-center flex-shrink-0">
+            <svg class="w-4 h-4 text-ferris-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-white font-semibold">Rust-native performance</h3>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+          Built in Rust from the ground up — not ported or wrapped. A ~10MB binary, sub-10ms auth latency, and a predictable memory footprint that holds under sustained load.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          {["~10MB binary", "<10ms latency", "No GC pauses", "Memory safe"].map((tag) => (
+            <span class="text-xs font-mono text-ferris-400/70 bg-ferris-500/5 border border-ferris-500/10 px-2 py-0.5 rounded">{tag}</span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Deploy & manage -->
+      <div class="group bg-slate-900/50 border border-slate-700/50 rounded-xl p-6 hover:border-ocean-500/20 transition-colors duration-300 reveal reveal-delay-2">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-9 h-9 rounded-lg bg-ocean-500/10 flex items-center justify-center flex-shrink-0">
+            <svg class="w-4 h-4 text-ocean-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </div>
+          <h3 class="text-white font-semibold">Deploy & manage your way</h3>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+          FerrisKey ships with first-class tooling for every ops workflow — from local testing to production GitOps pipelines. No custom scripting required.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          {["Helm chart", "Kubernetes Operator", "ArgoCD", "Docker Compose"].map((tag) => (
+            <span class="text-xs font-mono text-ocean-400/70 bg-ocean-500/5 border border-ocean-500/10 px-2 py-0.5 rounded">{tag}</span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Event-driven -->
+      <div class="group bg-slate-900/50 border border-slate-700/50 rounded-xl p-6 hover:border-purple-500/20 transition-colors duration-300 reveal reveal-delay-3">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-9 h-9 rounded-lg bg-purple-500/10 flex items-center justify-center flex-shrink-0">
+            <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"></path>
+            </svg>
+          </div>
+          <h3 class="text-white font-semibold">Event-driven extensibility</h3>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+          Every identity event — login, token issuance, policy change, realm update — emits a structured event you can consume to trigger webhooks, sync to your data lake, or drive custom workflows without patching the core.
+        </p>
+        <div class="flex flex-wrap gap-2">
+            {["Webhooks", "Kafka / NATS (soon)"].map((tag) => (
+            <span class="text-xs font-mono text-purple-400/70 bg-purple-500/5 border border-purple-500/10 px-2 py-0.5 rounded">{tag}</span>
+          ))}
+        </div>
+      </div>
+
+      <!-- CNCF ecosystem -->
+      <div class="group bg-slate-900/50 border border-slate-700/50 rounded-xl p-6 hover:border-green-500/20 transition-colors duration-300 reveal reveal-delay-4">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-9 h-9 rounded-lg bg-green-500/10 flex items-center justify-center flex-shrink-0">
+            <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+            </svg>
+          </div>
+          <h3 class="text-white font-semibold">CNCF ecosystem integration</h3>
+        </div>
+        <p class="text-slate-400 text-sm leading-relaxed mb-4">
+          FerrisKey is designed to fit naturally into cloud-native stacks. Native integrations with the tools your platform team already runs — no adapters, no workarounds.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          {["Prometheus", "OpenTelemetry", "OPA (soon)", "AuthZen"].map((tag) => (
+            <span class="text-xs font-mono text-green-400/70 bg-green-500/5 border border-green-500/10 px-2 py-0.5 rounded">{tag}</span>
+          ))}
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </section>

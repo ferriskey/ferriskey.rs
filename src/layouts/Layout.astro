@@ -104,12 +104,28 @@ const fullTitle = title.includes('FerrisKey') ? title : `${title} | FerrisKey`;
         const theme = localStorage.getItem('theme') || 'dark';
         document.documentElement.classList.toggle('dark', theme === 'dark');
       }
-
-      // Initialize theme on page load
       initTheme();
-
-      // Listen for view transitions
       document.addEventListener('astro:page-load', initTheme);
+
+      // Scroll-reveal via Intersection Observer
+      function initReveal() {
+        const els = document.querySelectorAll('.reveal');
+        if (!els.length) return;
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+        );
+        els.forEach((el) => observer.observe(el));
+      }
+      initReveal();
+      document.addEventListener('astro:page-load', initReveal);
     </script>
   </body>
 </html>
