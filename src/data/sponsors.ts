@@ -22,6 +22,16 @@ export const sponsors: Sponsor[] = [
     description: "Cloud Identity & Access Management",
   },
 
+  {
+    id: "gilded-health",
+    name: "Gilded Health",
+    logo: "/sponsors/gilded_health.svg",
+    website: "https://www.gilded.ch",
+    tier: "platinum",
+    description:
+      "Cloud-based healthcare software ecosystem development and sales.",
+  },
+
   // Gold Sponsors
   {
     id: "nudibranches",

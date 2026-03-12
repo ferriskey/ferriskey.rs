@@ -53,7 +53,7 @@ const supporters = sponsors.filter((s) => s.tier === 'supporter');
                   <span class="text-[9px] font-mono text-ferris-400 border border-ferris-500/30 bg-ferris-500/10 px-1.5 py-0.5 rounded-full uppercase tracking-wider">Platinum</span>
                 </div>
                 {sponsor.description && (
-                  <p class="text-slate-400 text-sm">{sponsor.description}</p>
+                  <p class="text-slate-400 text-sm max-w-[200px]">{sponsor.description}</p>
                 )}
               </div>
               <!-- Arrow -->
@@ -84,10 +84,10 @@ const supporters = sponsors.filter((s) => s.tier === 'supporter');
               <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center flex-shrink-0">
                 <img src={sponsor.logo} alt={sponsor.name} class="w-8 h-8 object-contain" loading="lazy"/>
               </div>
-              <div>
+              <div class="max-w-[180px]">
                 <p class="text-slate-200 text-sm font-medium group-hover:text-white transition-colors">{sponsor.name}</p>
                 {sponsor.description && (
-                  <p class="text-slate-500 text-xs">{sponsor.description}</p>
+                  <p class="text-slate-500 text-xs leading-snug">{sponsor.description}</p>
                 )}
               </div>
             </a>
