@@ -42,6 +42,16 @@ export const sponsors: Sponsor[] = [
     tier: "gold",
   },
 
+  {
+    id: "natalia",
+    name: "Natalia",
+    logo: "/sponsors/natalia.svg",
+    website: "https://getnatalia.com",
+    description:
+      "Don't pay for leads that you let go to your competitors anymore",
+    tier: "gold",
+  },
+
   // Supporters
   {
     id: "mineral",
